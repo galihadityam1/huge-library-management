@@ -26,7 +26,7 @@ const authenticator = async () => {
     throw new Error("Failed to authenticate:" + error.message)
   }
 }
-
+  
 const ImageUpload = ({ onFileChange }: { onFileChange: (filePath: string) => void }) => {
   const ikUploadRef = useRef(null);
   const [file, setFile] = useState<{ filePath: string } | null>(null);
