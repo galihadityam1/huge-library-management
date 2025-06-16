@@ -52,7 +52,7 @@ const AuthForm = <T extends FieldValues>({
             </p>
             <Form {...form}>
                 <form
-                    onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8 overflow-scroll max-h-[450px] sm:max-w-[500px]">
+                    onSubmit={form.handleSubmit(handleSubmit)} className="w-full space-y-6">
                     {Object.keys(defaultValues).map((field) => (
                         <FormField
                             key={field}
@@ -66,7 +66,7 @@ const AuthForm = <T extends FieldValues>({
                                     <FormControl>
                                         {field.name === 'universityCard' ?
                                         (
-                                            <ImageUpload />
+                                            <ImageUpload onFileChange={field.onChange}/>
                                         ) : (
                                             <Input required 
                                             type={FIELD_TYPES[field.name as keyof typeof FIELD_TYPES]}
